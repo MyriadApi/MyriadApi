@@ -7,7 +7,7 @@ play storeからダウンロード可能です。
   
 iPhone版についても開発を予定しています。
 
-## Getting Started
+## チュートリアル
 
 ### 事前準備  
 ・スマートフォン  
@@ -21,11 +21,11 @@ iPhone版についても開発を予定しています。
 <img src="./address.jpg" width="250px">
 1. PCのブラウザで表示されたページの上部にConnected Smartphoneと表示されれば準備OKです。  
 ![connected](./connected.png)
-1. アプリに表示されているセンサーのスイッチを入れてみましょう。   
+1. アプリに表示されているGyroscopeのスイッチを入れてみましょう。   
 <img src="./sensor.jpg" width="250px">
-1. ブラウザに表示されているセンサー類の内容が更新されるはずです！
+1. ブラウザに表示されているGyroscopeの内容が更新されるはずです！
 <img src="SensorUpdated.png" >
-1. これで準備完了です!
 ###  もっと詳しく
+[curlでAPIを呼び出す。](./curl)  
 Scratch3と繋げて遊ぶ  
 api ドキュメント  
