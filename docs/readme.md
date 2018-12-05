@@ -23,8 +23,8 @@ iPhone版についても開発を予定しています。
 ![connected](./connected.png)
 1. アプリに表示されているGyroscopeのスイッチを入れてみましょう。   
 <img src="./sensor.jpg" width="250px">
-1. ブラウザに表示されているGyroscopeの内容が更新されるはずです！
-<img src="SensorUpdated.png" >
+1. ブラウザに表示されているGyroscopeの内容が更新されるはずです！  
+<img src="SensorUpdated.png" >  
 ###  もっと詳しく  
 [curlでAPIを呼び出す。](/curl/readme.md)    
 [Scratch3と繋げて遊ぶ](/scratch)    
