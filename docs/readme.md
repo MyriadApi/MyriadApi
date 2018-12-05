@@ -25,7 +25,7 @@ iPhone版についても開発を予定しています。
 <img src="./sensor.jpg" width="250px">
 1. ブラウザに表示されているGyroscopeの内容が更新されるはずです！
 <img src="SensorUpdated.png" >
-###  もっと詳しく
-[curlでAPIを呼び出す。](/curl/curl.md)  
-[Scratch3と繋げて遊ぶ](/scratch)  
-api ドキュメント  
+###  もっと詳しく  
+[curlでAPIを呼び出す。](/curl/readme.md)    
+[Scratch3と繋げて遊ぶ](/scratch)    
+api ドキュメント    
