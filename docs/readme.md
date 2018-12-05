@@ -4,6 +4,7 @@
 スマートフォンをAPIサーバー化し、PC等の他のデバイスからからRest API経由でスマートフォンからセンサー情報を取得したり、スマートフォンを遠隔操作出来るようにするアプリです。
 
 play storeからダウンロード可能です。
+[<img src="./ps.png" width="150px">](https://play.google.com/store/apps/details?id=com.myriad)
   
 iPhone版についても開発を予定しています。
 
