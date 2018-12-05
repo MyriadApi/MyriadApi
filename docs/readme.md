@@ -27,5 +27,5 @@ iPhone版についても開発を予定しています。
 <img src="SensorUpdated.png" >
 ###  もっと詳しく
 [curlでAPIを呼び出す。](./curl)  
-Scratch3と繋げて遊ぶ  
+[Scratch3と繋げて遊ぶ](./scratch)  
 api ドキュメント  
