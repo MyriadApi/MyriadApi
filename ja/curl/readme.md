@@ -14,5 +14,5 @@ WindowsのPCの人は下記からダウンロードしてインストールし�
 ```curl
 curl -X POST -H "Content-Type: application/json" -d '{"enabled": false}' <IP Address>/sensor/gyroscope
 ```
-3. 他のAPIについてはAPIのドキュメントを参照してください。  
+3. 他にも様々なAPIがあります！詳細はAPIのドキュメントを参照ください。  
 [api document](https://myriadapi.github.io/ja/api/)
