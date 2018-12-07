@@ -1,5 +1,5 @@
 #### curlコマンドでAPIを呼び出してみる 
-Myriad Apiは単純なREST APIで構成されています。
+ここでcurlを使ってAPIを呼び出してみます。
 
 1. curlのインストール  
 macやLinuxのPCは標準で入っているのでTerminalから呼び出せます。  
@@ -14,4 +14,5 @@ WindowsのPCの人は下記からダウンロードしてインストールし�
 ```curl
 curl -X POST -H "Content-Type: application/json" -d '{"enabled": false}' <IP Address>/sensor/gyroscope
 ```
-3. 他のAPIについてはAPIのドキュメントを参照してください。
+3. 他のAPIについてはAPIのドキュメントを参照してください。  
+[api document](https://myriadapi.github.io/ja/api/)
