@@ -1,7 +1,5 @@
-# MyriadApi
-
 ## Myriad Apiとは
-スマートフォンをAPIサーバー化し、PC等の他のデバイスからからRest API経由でスマートフォンからセンサー情報を取得したり、スマートフォンを遠隔操作出来るようにするアプリです。    
+PC等の他のデバイスからからRest API経由でスマートフォンからセンサー情報を取得したり、操作出来るようにするアプリです。    
 
   
 [<img src="./ps.png" width="150px">](https://play.google.com/store/apps/details?id=com.myriad)
