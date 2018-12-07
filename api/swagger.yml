@@ -1,0 +1,431 @@
+swagger: '2.0'
+info:
+  description: |-
+    Myriad App を使えばスマートフォンのセンサーやデバイスにREST API簡単にアクセス出来ます。色んなIOT電子工作キットが販売されてますが、まずは手持ちのスマートフォンを使って工作してみませんか？ 
+     このドキュメントのホストURLはlocalhost:3000になっています。正しいAPIのホストURLはアプリの上部に表示されています。例えばホストURLが http://192.168.10.7:3000 の場合、ジャイロスコープから値を取る時はhttp://192.168.10.7:3000/sensor/gyroscope になります
+  version: 0.0.1
+  title: Myriad api document
+host: 'localhost:3000'
+tags:
+  - name: Gyroscope
+    description: 'ジャイロスコープ スマートフォンのx,y,z軸それぞれの角速度を知る事が出来ます'
+  - name: Accelerometer
+    description: 加速度センサー スマートフォンの傾きを知ることが出来ます
+  - name: Magnetometer
+    description: 磁気センサー　磁力の大きさや方向を知ることが出来ます
+  - name: Light sensor
+    description: 光センサー　明るさ(光量)を取得できます
+  - name: Proximity sensor
+    description: 近接センサー　対象が接近しているかどうか知る事が出来ます
+  - name: Vibration
+    description: バイブレーション機能
+  - name: Flash light
+    description: フラッシュライト
+x-tagGroups:
+  - name: センサー類
+    tags:
+      - Gyroscope
+      - Accelerometer
+      - Magnetometer
+      - Light sensor
+      - Proximity sensor
+  - name: 制御系
+    tags:
+      - Vibration
+      - Flash light
+schemes:
+  - http
+paths:
+  /sensor/gyroscope:
+    get:
+      tags:
+        - Gyroscope
+      summary: ジャイロスコープの値を取得する
+      description: 'x,y,z軸の角速度を取得する'
+      operationId: getGyroscopeData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 取得成功
+          schema:
+            $ref: '#/definitions/AxisSensorData'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl <API URL>/sensor/gyroscope
+    post:
+      tags:
+        - Gyroscope
+      summary: ジャイロスコープのON/OFF
+      description: ジャイロスコープのON/OFFを切り替える
+      operationId: updateGyroecope
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Toggle'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"enabled": false}' <API URL>/sensor/gyroscope
+      responses:
+        '200':
+          description: 更新成功
+        '405':
+          description: パラメータが不正
+  /sensor/accelerometer:
+    get:
+      tags:
+        - Accelerometer
+      summary: 加速度センサーの値を取得する
+      operationId: getAccelerometer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 取得成功
+          schema:
+            $ref: '#/definitions/AxisSensorData'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl <API URL>/sensor/accelerometer
+    post:
+      tags:
+        - Accelerometer
+      summary: 加速度センサーのON/OFF
+      description: 加速度センサーのON/OFFを切り替えます。
+      operationId: updateAccelerometer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Toggle'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/accelerometer
+      responses:
+        '200':
+          description: 更新成功
+        '405':
+          description: パラメータが不正
+  /sensor/magnetometer:
+    get:
+      tags:
+        - Magnetometer
+      summary: 磁気センサーの値を取得する
+      operationId: getMagnetometer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 取得成功
+          schema:
+            $ref: '#/definitions/AxisSensorData'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl <API URL>/sensor/magnetometer
+    post:
+      tags:
+        - Magnetometer
+      summary: 磁気センサーのON/OFF
+      description: 磁気センサーのON/OFFを切り替えます
+      operationId: updateMagnetometer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Toggle'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/magnetometer
+      responses:
+        '200':
+          description: 更新成功
+        '405':
+          description: パラメータが不正
+  /sensor/light:
+    get:
+      tags:
+        - Light sensor
+      summary: 光センサーの値を取得する
+      operationId: getLightData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 取得成功
+          schema:
+            $ref: '#/definitions/LightData'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl <API URL>/sensor/light
+    post:
+      tags:
+        - Light sensor
+      summary: 光センサーのON/OFF
+      description: 光センサーをON/OFFを切り替えます
+      operationId: updateLight
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: trueの場合、有効化。falseの場合に無効化
+          required: true
+          schema:
+            $ref: '#/definitions/Toggle'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/light
+      responses:
+        '200':
+          description: 更新成功
+        '405':
+          description: パラメータが不正
+  /sensor/proximity:
+    get:
+      tags:
+        - Proximity sensor
+      summary: 近接データの値を取得する
+      operationId: getProximityData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 取得成功
+          schema:
+            $ref: '#/definitions/ProximityData'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl <API URL>/sensor/proximity
+    post:
+      tags:
+        - Proximity sensor
+      summary: 近接センサーのON/OFF
+      description: 近接センサーのON/OFFを切り替えます
+      operationId: updateProximity
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Toggle'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/proximity
+      responses:
+        '200':
+          description: 正常時
+        '405':
+          description: パラメータが不正
+  /device/vibration/vibrate:
+    post:
+      tags:
+        - Vibration
+      summary: 振動させる
+      operationId: doVibration
+      parameters:
+        - in: body
+          name: body
+          description: 振動させる時間をミリ秒単位で設定できます(androidのみ)
+          required: true
+          schema:
+            $ref: '#/definitions/Duration'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+        '405':
+          description: Invalid paramter
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"duration": 1000}' <API URL>/device/vibration/vibrate
+  /device/vibration/cancel:
+    post:
+      tags:
+        - Vibration
+      summary: 振動を止める。
+      description: 振動している途中にPOSTすると止まります。していない時にも呼び出せますが何も起きません。
+      operationId: cancelVibration
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 成功時
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"duration": 1000}' <API URL>/device/vibration/cancel
+  /device/light:
+    get:
+      tags:
+        - Flash light
+      summary: 'フラッシュライトの状態を取得する '
+      description: フラッシュライトの状態を取得する
+      operationId: getFlashLightState
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: 正常処理
+          schema:
+            $ref: '#/definitions/LightState'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl <API URL>/device/light
+    post:
+      tags:
+        - Flash light
+      summary: フラッシュライトの点灯・消灯
+      description: フラッシュライトの点灯・消灯
+      operationId: toggleFlashLight
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: trueを指定した場合、点灯。falseを指定した場合消灯する
+          required: true
+          schema:
+            $ref: '#/definitions/LightState'
+      x-code-samples:
+        - lang: curl
+          source: | 
+            curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/device/light
+      responses:
+        '200':
+          description: 正常処理
+definitions:
+  Toggle:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        example: 'true'
+        description: trueを指定した場合、センサーが有効となり falseの場合は無効となる。
+  LightState:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        example: 'true'
+        description: trueを指定した場合、点灯。falseを指定した場合消灯する
+  ProximityData:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        default: true
+        description: trueの場合、動作中。falseの場合、停止中
+      isNear:
+        type: boolean
+        default: true
+        description: 'true: 近い. false: 遠い'
+      maxRange:
+        type: number
+        example: 10
+        description: 検出可能な最大距離(cm)
+      value:
+        type: number
+        example: 0
+        description: 対象との距離(cm)
+      timeStamp:
+        type: number
+        example: 1543117163400
+        description: センサーからデータを取得したタイミングのタイムスタンプ。UTC時間(ms)
+  LightData:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        default: true
+        description: trueの場合、動作中。falseの場合、停止中
+      value:
+        type: number
+        example: 123
+        description: 光量
+      timeStamp:
+        type: number
+        example: 1543117163400
+        description: センサーからデータを取得したタイミングのタイムスタンプ。UTC時間(ms)
+  Duration:
+    type: object
+    properties:
+      duration:
+        type: number
+        example: 100
+        description: 設定時間の単位はミリ秒です。
+  AxisSensorData:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        default: true
+        description: trueの場合、動作中。falseの場合、停止中
+      x:
+        type: number
+        example: 0.1543117
+        description: X軸の値
+      'y':
+        type: number
+        example: -0.7345137
+        description: Y軸の値
+      z:
+        type: number
+        example: 3.7943677
+        description: Z軸の値
+      timeStamp:
+        type: number
+        example: 1543117163400
+        description: センサーからデータを取得したタイミングのタイムスタンプ。UTC時間(ms)
