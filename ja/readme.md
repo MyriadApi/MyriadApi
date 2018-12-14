@@ -1,6 +1,7 @@
 ## Myriad Apiとは
-PC等の他のデバイスからからRest API経由でスマートフォンからセンサー情報を取得したり、操作出来るようにするアプリです。    
-
+PC等の他のデバイスからからRest API経由でスマートフォンからセンサー情報を取得したり、操作出来るようにするアプリです。 
+Scratch３や 簡単なスクリプトでスマホのセンサー類にアクセス出来ます。最近、色んなIoTや電子工作をするキットが発売されてますが、まずはお手持ちのスマートフォンでIoT工作してみてはどうでしょうか？    
+ベータ版です。  
   
 [<img src="./ps.png" width="150px">](https://play.google.com/store/apps/details?id=com.myriad)
   
@@ -25,7 +26,7 @@ iPhone版についても開発を予定しています。
 1. ブラウザに表示されているGyroscopeの内容が更新されるはずです！  
 <img src="SensorUpdated.png" >  
     
-###  さらに詳しく  
+###  次のステップ  
 [curlでAPIを呼び出す](/curl/readme.md)    
 [Scratch3と繋げて遊ぶ](https://myriadapi.github.io/myriad_scratch3_blocks/ja/)    
 [api ドキュメント](/api)   
