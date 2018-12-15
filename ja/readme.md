@@ -7,6 +7,13 @@ Scratch３や 簡単なスクリプトでスマホのセンサー類にアクセ
   
 iPhone版についても開発を予定しています。
 
+###  使い方
+[チュートリアル(PCとアプリ接続確認)](#tutorial)  
+[curlでAPIを呼び出す](/curl/readme.md)    
+[Scratch3で遊ぶ](https://myriadapi.github.io/myriad_scratch3_blocks/ja/)    
+[api ドキュメント](/api)   
+
+<div id="tutorial"></div>
 ## チュートリアル
 
 ### 事前準備  
@@ -28,5 +35,5 @@ iPhone版についても開発を予定しています。
     
 ###  次のステップ  
 [curlでAPIを呼び出す](/curl/readme.md)    
-[Scratch3と繋げて遊ぶ](https://myriadapi.github.io/myriad_scratch3_blocks/ja/)    
+[Scratch3で遊ぶ](https://myriadapi.github.io/myriad_scratch3_blocks/ja/)    
 [api ドキュメント](/api)   
