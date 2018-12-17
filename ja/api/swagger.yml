@@ -56,6 +56,14 @@ paths:
         - lang: curl
           source: | 
             curl <API URL>/sensor/gyroscope
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/sensor/gyroscope'
+            with urllib.request.urlopen(url) as response:
+              result = json.loads(response.read().decode('utf8'))
+              print(result['x'])
     post:
       tags:
         - Gyroscope
@@ -76,6 +84,18 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"enabled": false}' <API URL>/sensor/gyroscope
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/sensor/gyroscope'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"enabled" : True}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
       responses:
         '200':
           description: 更新成功
@@ -100,6 +120,13 @@ paths:
         - lang: curl
           source: | 
             curl <API URL>/sensor/accelerometer
+        - lang: Python
+          source: | 
+            import urllib.request, json
+            url = '<API URL>/sensor/accelerometer'
+            with urllib.request.urlopen(url) as response:
+              result = json.loads(response.read().decode('utf8'))
+              print(result['x'])
     post:
       tags:
         - Accelerometer
@@ -120,6 +147,18 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/accelerometer
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/sensor/accelerometer'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"enabled" : True}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
       responses:
         '200':
           description: 更新成功
@@ -144,6 +183,13 @@ paths:
         - lang: curl
           source: | 
             curl <API URL>/sensor/magnetometer
+        - lang: Python
+          source: | 
+            import urllib.request, json
+            url = '<API URL>/sensor/magnetometer'
+            with urllib.request.urlopen(url) as response:
+              result = json.loads(response.read().decode('utf8'))
+              print(result['x'])
     post:
       tags:
         - Magnetometer
@@ -164,6 +210,18 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/magnetometer
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/sensor/magnetometer'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"enabled" : True}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
       responses:
         '200':
           description: 更新成功
@@ -188,6 +246,14 @@ paths:
         - lang: curl
           source: | 
             curl <API URL>/sensor/light
+        - lang: Python
+          source: | 
+            import urllib.request, json
+            url = '<API URL>/sensor/light'
+            with urllib.request.urlopen(url) as response:
+              result = json.loads(response.read().decode('utf8'))
+              print(result['value'])
+
     post:
       tags:
         - Light sensor
@@ -209,6 +275,18 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/light
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/sensor/light'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"enabled" : True}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
       responses:
         '200':
           description: 更新成功
@@ -233,6 +311,13 @@ paths:
         - lang: curl
           source: | 
             curl <API URL>/sensor/proximity
+        - lang: Python
+          source: | 
+            import urllib.request, json
+            url = '<API URL>/sensor/proximity'
+            with urllib.request.urlopen(url) as response:
+              result = json.loads(response.read().decode('utf8'))
+              print(result['value'])
     post:
       tags:
         - Proximity sensor
@@ -253,6 +338,18 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/sensor/proximity
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/sensor/proximity'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"enabled" : True}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
       responses:
         '200':
           description: 正常時
@@ -284,6 +381,18 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"duration": 1000}' <API URL>/device/vibration/vibrate
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/device/vibration/vibrate'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"duration" : 1000}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
   /device/vibration/cancel:
     post:
       tags:
@@ -302,6 +411,18 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"duration": 1000}' <API URL>/device/vibration/cancel
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/device/vibration/cancel'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"duration" : 1000}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
   /device/light:
     get:
       tags:
@@ -322,6 +443,13 @@ paths:
         - lang: curl
           source: | 
             curl <API URL>/device/light
+        - lang: Python
+          source: | 
+            import urllib.request, json
+            url = '<API URL>/device/light'
+            with urllib.request.urlopen(url) as response:
+              result = json.loads(response.read().decode('utf8'))
+              print(result['enabled'])
     post:
       tags:
         - Flash light
@@ -343,6 +471,19 @@ paths:
         - lang: curl
           source: | 
             curl -X POST -H "Content-Type: application/json" -d '{"enabled": true}' <API URL>/device/light
+        - lang: Python
+          source: | 
+            import urllib.request, json
+
+            url = '<API URL>/device/light'
+            method = "POST"
+            headers = {"Content-Type" : "application/json"}
+            turnOn = {"enabled" : True}
+            jsonData = json.dumps(turnOn).encode("utf-8")
+            request = urllib.request.Request(url, data=jsonData, method=method, headers=headers)
+            res = urllib.request.urlopen(request)
+            res.close()
+
       responses:
         '200':
           description: 正常処理
