@@ -36,4 +36,4 @@ iPhone版についても開発を予定しています。
 ###  次のステップ  
 [curlでAPIを呼び出す](/curl/readme.md)    
 [Scratch3で遊ぶ](https://myriadapi.github.io/myriad_scratch3_blocks/ja/)    
-[api ドキュメント](/api)   
+[api ドキュメント](https://myriadapi.github.io/ja/api/)   
